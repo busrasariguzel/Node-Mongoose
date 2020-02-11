@@ -57,10 +57,10 @@ module.exports = {
         return new Promise((resolve,reject)=> {
             User.findById({_id: req.params.id})
             .then((user) => {
-        const { name,email } = req.body;
+        const { name , email } = req.body;
     
-        user.name = req.body.name ? req.body.ame : user.name
-        user.email = req.body.email ? req.body.email : user.email;
+        user.name = name ? name : user.name
+        user.email = email ? email : user.email;
     
         user.save()
         .then((user) => {
